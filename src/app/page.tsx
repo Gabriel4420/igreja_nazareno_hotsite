@@ -16,9 +16,9 @@ export default function Home() {
           Venha cultuar conosco e se aproximar um pouco mais de Deus{" "}
         </h1>
         <Image
-          src="/images/arca-aliança.png"
+          src="/images/biblia.png"
           alt="arca da aliança"
-          height="500"
+          height="900"
           width="500"
           className="mx-auto drop-shadow-lg rounded-sm mb-20"
         />

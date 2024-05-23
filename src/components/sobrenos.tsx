@@ -13,12 +13,12 @@ const SobreNos: React.FC = ({ title, image }: SobreNosProps) => {
       <Image
         src={image ? image : "/images/foto google.png"}
         alt="arca da aliança"
-        height="500"
-        width="500"
-        className="mx-auto drop-shadow-lg rounded-s-3xl ltr "
+        height="300"
+        width="800"
+        className="mx-auto drop-shadow-lg rounded-es-[90px] ltr "
       />
 
-      <p className="text-[16px] md:lg:text-[16px] drop-shadow-lg px-10 py-5  text-white font-medium">
+      <p className="text-[16px] md:lg:text-[16px] drop-shadow-lg px-10 py-10  text-white font-medium">
         A Igreja do Nazareno de Mirassol, fundada há seis anos, é uma comunidade
         de fé vibrante e acolhedora situada no coração da cidade. Desde sua
         fundação, a igreja tem se dedicado a cultivar um ambiente de adoração

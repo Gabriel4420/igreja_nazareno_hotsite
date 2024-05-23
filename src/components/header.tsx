@@ -34,7 +34,7 @@ const Header: React.FC = () => {
 
       <MobileMenu />
 
-      <div className="flex ">
+      <div className="hidden md:flex lg:flex ">
         <InstagramLogo size={32} color="white" className="px-1" />
         <FacebookLogo size={32} color="white" className="px-1" />
         <XLogo size={32} color="white" className="px-1"/>
