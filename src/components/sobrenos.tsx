@@ -6,7 +6,7 @@ import { SobreNosProps } from "@/types/sobrenosprops";
 const SobreNos: React.FC = ({ title, image }: SobreNosProps) => {
   return (
     <div className="bg-[#E27617] leading-10 h-full py-12 ">
-      <h2 className="text-[46px] md:lg:text-[56px] text-center py-10 text-white font-bold antialiased text-shadow-lg ">
+      <h2 className="text-[32px] md:lg:text-[56px] text-center py-10 text-white font-bold antialiased text-shadow-lg ">
         {title ? title : " Um pouco sobre nos..."}
       </h2>
 
