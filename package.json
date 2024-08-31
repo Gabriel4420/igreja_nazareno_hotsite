@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+
     "@apollo/client": "^3.11.5",
     "@datocms/cda-client": "^0.2.2",
     "@phosphor-icons/react": "^2.1.5",
