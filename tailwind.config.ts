@@ -40,7 +40,8 @@ const config: Config = {
           textShadow: 'none',
         },
       })
-    }
+    },
+    require('flowbite/plugin'),
   ],
 };
 export default config;
