@@ -1,5 +1,9 @@
 {
     "conventionalCommits.scopes": [
-        "api"
-    ]
+        "api",
+        "user interface"
+    ],
+    "sqltools.useNodeRuntime": true,
+    "WillLuke.nextjs.addTypesOnSave": true,
+    "WillLuke.nextjs.hasPrompted": true
 }

@@ -1,25 +1,27 @@
-import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+'use client'
 import "./globals.css";
-import Header from "@/components/header";
+import Header from "@/components/ui/header/header";
+import { ToastContainer } from "react-toastify";
+import { SessionProvider } from "next-auth/react";
 
-const mont = Montserrat({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Igreja Nazareno Mirassol",
-  description: "uma igreja evangelista a serviço do reino de Deus",
-};
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <html lang="en">
-      <body className={mont.className}>
-        <Header/>
-        {children}</body>
+    <html lang="pt">
+      <body style={{ overflowX: "hidden" }}>
+        <SessionProvider>
+          <Header />
+          {children}
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+          />
+        </SessionProvider>
+      </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
