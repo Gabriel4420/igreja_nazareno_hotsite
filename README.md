@@ -1,5 +1,5 @@
 <h1 align="center">
-   NEXT SEGUNDO
+IGREJA NAZARENO MIRASSOL
 </h1>
 
 <p align="center">
