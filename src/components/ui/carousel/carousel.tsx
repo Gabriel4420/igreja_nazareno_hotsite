@@ -39,7 +39,7 @@ const Carousel = ({ data }: any) => {
             <Image
               src={image.url}
               alt={image.alt}
-              layout="fill"
+              layout="responsive"
               objectFit="contain"
               className="w-full h-full  blur-none"
             />

@@ -1,10 +1,10 @@
+
 import BlogArea from "@/components/screens/blogArea";
 import Carousel from "@/components/ui/carousel/carousel";
 import SobreNos from "@/components/screens/sobrenos";
 import { data } from "@/helpers/banner";
 import Image from "next/image";
 import NewsletterModal from "@/components/screens/newsletter";
-
 
 export default function Home() {
   return (
