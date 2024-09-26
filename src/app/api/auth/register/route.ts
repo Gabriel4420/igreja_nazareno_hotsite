@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
 
@@ -25,40 +25,42 @@ const createUserInDatabase = async (email: string, hashedPassword: string) => {
     return newUser;
   } catch (error) {
     if (error instanceof Error) {
-      throw new Error(error.message); // Acessando a propriedade message se for um objeto Error
+      throw new Error(error.message);
     } else {
-      throw new Error("Unknown error"); // Caso não seja um Error
+      throw new Error("Unknown error");
     }
   }
 };
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method not allowed" });
-  }
-
-  const { email, password } = req.body;
-
-  if (!email || !password) {
-    return res.status(400).json({ message: "Email and password are required" });
-  }
-
+// Função handler para lidar com requisições POST e GET
+export async function POST(req: NextRequest) {
   try {
+    const { email, password } = await req.json();
+
+    if (!email || !password) {
+      return NextResponse.json(
+        { message: "Email and password are required" },
+        { status: 400 }
+      );
+    }
+
     // Criptografar a senha
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Criar o usuário no banco de dados usando Prisma
     const newUser = await createUserInDatabase(email, hashedPassword);
 
-    return res.status(201).json({ message: "User created", user: newUser });
+    return NextResponse.json({ message: "User created", user: newUser }, { status: 201 });
   } catch (error) {
     if (error instanceof Error) {
-      return res
-        .status(500)
-        .json({ message: error?.message || "Internal server error" }); // Acessando a propriedade message se for um objeto Error
+      return NextResponse.json(
+        { message: error?.message || "Internal server error" },
+        { status: 500 }
+      );
     }
   }
+}
+
+export async function GET() {
+  return NextResponse.json({ message: "GET method not allowed" }, { status: 405 });
 }

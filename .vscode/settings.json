@@ -5,5 +5,13 @@
     ],
     "sqltools.useNodeRuntime": true,
     "WillLuke.nextjs.addTypesOnSave": true,
-    "WillLuke.nextjs.hasPrompted": true
+    "WillLuke.nextjs.hasPrompted": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:igreja_nazareno_hotsite}/prisma/dev.db",
+            "name": "dev"
+        }
+    ]
 }
